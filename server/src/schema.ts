@@ -8,6 +8,17 @@ type Query{
     track (id: ID!): Track
 }
 
+type Mutation {
+    incrementTrackViews(id: ID!) : IncrementTrackViewsResponse!
+}
+
+type IncrementTrackViewsResponse {
+    code: Int!
+    success: Boolean!
+    message: String!
+    track: Track
+}
+
 "A Track is a group pf modules that teaches about specific topic"
 type Track{
 id: ID!
